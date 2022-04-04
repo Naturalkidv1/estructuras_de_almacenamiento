@@ -7,35 +7,39 @@ public class PruebaListaLibros {
         ListaLibros catalogo = new ListaLibros();
         //ListaLibros catalogo2 = new ListaLibros();
 
-        catalogo.insertarLibro(new Libro("123", "Goku le", "Gana", 10, 0.9));
-        catalogo.insertarLibro(new Libro("zjsdf", "Goku le", "Gana", 10, 0.19));
-        catalogo.insertarLibro(new Libro("Asdf", "Goku le", "Gana", 10, 0.29));
-        catalogo.insertarLibro(new Libro("aaa", "Goku le", "Gana", 10, 0.69));
-        catalogo.insertarLibro(new Libro("127", "Goku le", "Gana", 10, 0.9));
-        catalogo.insertarLibro(new Libro("128", "Goku le", "Gana", 10, 0.9));
+        catalogo.insertarLibro(new Libro("123", "Goku le", "Gana", 11, 0.9));
+        catalogo.insertarLibro(new Libro("zjsdf", "Goku le", "Gana", 13, 0.19));
+        catalogo.insertarLibro(new Libro("Asdf", "Goku le", "Gana", 14, 0.29));
+        catalogo.insertarLibro(new Libro("aaa", "Goku le", "Gana", 66, 0.69));
+        catalogo.insertarLibro(new Libro("127", "Goku le", "Gana", 75, 0.9));
+        catalogo.insertarLibro(new Libro("128", "Goku le", "Gana", 1, 0.9));
 
-//        catalogo2.insertarLibro(new Libro("546", "Gana", "Goku le",10, 0.9));
+////        catalogo2.insertarLibro(new Libro("546", "Gana", "Goku le",10, 0.9));
         catalogo.imprimirConsola();
-//        //catalogo2.imprimirConsola();
+////        //catalogo2.imprimirConsola();
+////
+////        System.out.println("Tamaño del catálogo" + catalogo.getCantidadLibros());
+////        //System.out.println("Tamaño del catálogo2" + catalogo2.getCantidadLibros());
+////
+////        Libro libro = catalogo.buscarISBN("123");
+////        System.out.println("Libro buscado: " + libro);
+////
+////        libro = catalogo.buscarISBN2("126");
+////        System.out.println("Libro buscado: " + libro);
+////
+////        catalogo.borrarLibro(new Libro("128", "", "", 0, 0));
+////
+////        catalogo.imprimirConsola();
+////        System.out.println("Libros a 0.9");
 //
-//        System.out.println("Tamaño del catálogo" + catalogo.getCantidadLibros());
-//        //System.out.println("Tamaño del catálogo2" + catalogo2.getCantidadLibros());
-//
-//        Libro libro = catalogo.buscarISBN("123");
-//        System.out.println("Libro buscado: " + libro);
-//
-//        libro = catalogo.buscarISBN2("126");
-//        System.out.println("Libro buscado: " + libro);
-//
-//        catalogo.borrarLibro(new Libro("128", "", "", 0, 0));
-//
+//        catalogo.ordenarISBN();
 //        catalogo.imprimirConsola();
-//        System.out.println("Libros a 0.9");
-
-        catalogo.ordenarISBN();
+//        int posicion = catalogo.buscarISBN(new Libro("aaa", "Goku le", "Gana", 10, 0.69));
+//        System.out.println("Está en la posición: " + posicion);
+            
+        catalogo.ordenarComparatorNumPag();
         catalogo.imprimirConsola();
-        int posicion = catalogo.buscarISBN(new Libro("aaa", "Goku le", "Gana", 10, 0.69));
-        System.out.println("Está en la posición: " + posicion);
+         
     }
 
 }

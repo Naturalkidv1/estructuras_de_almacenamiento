@@ -2,6 +2,7 @@ package febrero2022.Lista;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class ListaLibros {
 
@@ -83,13 +84,14 @@ public class ListaLibros {
         }
         return aux;
     }
-    
+
     //Collections.sort(lista) lsita debe contener objetos que implementan comparable
     public void ordenarISBN() {
 
         Collections.sort(lista);
 
     }
+
     // BinarySearch de un objeto según la ordenación natural
     // no funciona si la lista está desordenada
     public int buscarISBN(Libro l) {
@@ -97,11 +99,33 @@ public class ListaLibros {
         return Collections.binarySearch(lista, l);
 
     }
-    
-    public void ordenarComparatorNombre(){
-        
-        Collections.sort(lista, (Libro l1, Libro l2)->l1.getNombre().compareTo(l2.getNombre()));
-        
+
+    public void ordenarComparatorNombre() {
+
+        Collections.sort(lista, (Libro l1, Libro l2) -> l1.getNombre().compareTo(l2.getNombre()));
+
     }
 
+    public void ordenarComparatorNumPag() {
+
+        //Collections.sort(lista, (Libro l1, Libro l2)->l1.getNumeroPags() - l2.getNumeroPags());
+        Collections.sort(lista, (l1, l2) -> Integer.compare(l1.getNumeroPags(), l2.getNumeroPags()));
+    }
+    
+    public void ordenarNombrePaginas(){
+        
+        Comparator<Libro> criterioNombre = (Libro l1, Libro l2) -> l1.getNombre().compareTo(l2.getNombre());
+        Comparator<Libro> criterioPaginas =  (Libro l1, Libro l2)->l1.getNumeroPags() - l2.getNumeroPags();
+        Comparator<Libro> criterioNombrePaginas = criterioNombre.thenComparing(criterioPaginas);
+        
+        Collections.sort(lista, criterioNombrePaginas);
+        
+    }
+    
+    public int buscarBinariaNombre(Libro l){
+        
+        return Collections.binarySearch(lista, l, (Libro l1, Libro l2)->l1.getNombre().compareTo(l2.getNombre()));
+        
+    }
+    
 }
